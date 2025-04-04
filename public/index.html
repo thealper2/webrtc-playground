@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Playground</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>WebRTC Playground</h1>
+        </header>
+
+        <main class="video-container">
+            <!-- Main video display area -->
+            <div id="main-video-area">
+                <div id="screen-container" class="hidden">
+                    <video id="screen-video" autoplay playsinline></video>
+                </div>
+                <div id="camera-container" class="hidden">
+                    <video id="camera-video" autoplay playsinline muted></video>
+                </div>
+                <div id="placeholder" class="active">
+                    <div class="placeholder-text">No media is being shared</div>
+                </div>
+                </main-video-area>
+
+                <!-- Recorded video playback area -->
+                <div id="recording-playback" class="hidden">
+                    <video id="playback-video" controls playsinline></video>
+                </div>
+        </main>
+
+        <footer class="controls">
+            <div class="control-group">
+                <button id="request-permissions" class="btn primary">Share my mic and camera</button>
+            </div>
+
+            <div class="control-group">
+                <button id="open-camera" class="btn disabled" disabled>Open Camera</button>
+                <button id="stop-camera" class="btn stop disabled" disabled>Stop Camera</button>
+            </div>
+
+            <div class="control-group">
+                <button id="share-screen" class="btn disabled" disabled>Share Screen</button>
+                <button id="stop-screen" class="btn stop disabled" disabled>Stop Screen</button>
+            </div>
+
+            <div class="control-group">
+                <button id="start-recording" class="btn disabled" disabled>Start Recording</button>
+                <button id="stop-recording" class="btn stop disabled" disabled>Stop Recording</button>
+                <button id="play-recording" class="btn disabled" disabled>Play Recording</button>
+            </div>
+        </footer>
+
+        <div id="error-notification" class="hidden">
+            <span id="error-message"></span>
+            <button id="close-error">×</button>
+        </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/recording.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
